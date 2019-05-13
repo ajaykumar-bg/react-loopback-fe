@@ -8,6 +8,7 @@ class Home extends Component {
     
       this.state = {
         skills: 0,
+        employees: 0,
         deviceCategories: 0
       }
     }
@@ -31,13 +32,16 @@ class Home extends Component {
     
     
   render() {
-      const {skills, deviceCategories} = this.state;
+      const {skills, employees, deviceCategories} = this.state;
     return (
       <div>
           <h3>Dashboard</h3>
           <div className="collection">
             <Link to="/skills" className="collection-item">
               <span className="badge">{skills}</span>Skills Added
+            </Link>
+            <Link to="/employees" className="collection-item">
+              <span className="badge">{employees}</span>Employees
             </Link>
             <Link to="/device-categories" className="collection-item">
               <span className="badge">{deviceCategories}</span>Device Categories
