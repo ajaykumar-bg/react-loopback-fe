@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import {Switch, Route} from 'react-router-dom'
 
 import Skills from './Skills'
-import SkillAdd from './SkillAdd'
+import AddSkill from './AddSkill'
 import SkillDetails from './SkillDetails'
+import EditSkill from './EditSkill'
 
 import Employees from './Employees'
 import DeviceCategories from './DeviceCategories'
@@ -16,7 +17,8 @@ export class Main extends Component {
         <Switch>
             <Route exact path="/" component={Skills}/>
             <Route exact path="/skills" component={Skills}/>
-            <Route exact path="/skills/add" component={SkillAdd}/>
+            <Route exact path="/skills/add" component={AddSkill}/>
+            <Route exact path="/skills/edit/:id" component={EditSkill}/>
             <Route exact path="/skills/:id" component={SkillDetails}/>
             <Route path="/employees" component={Employees}/>
             <Route path="/device-categories" component={DeviceCategories}/>

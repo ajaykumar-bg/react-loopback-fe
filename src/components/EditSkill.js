@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-class SkillAdd extends Component {
+class EditSkill extends Component {
     constructor(props) {
       super(props)
     
@@ -19,10 +19,10 @@ class SkillAdd extends Component {
       <div>
         <br />
         <Link className="btn grey" to="/">Back</Link>
-        <h1>Add Skill</h1>
+        <h1>Edit Skill</h1>
       </div>
     )
   }
 }
 
-export default SkillAdd
+export default EditSkill

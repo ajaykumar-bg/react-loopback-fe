@@ -30,7 +30,7 @@ class SkillDetails extends Component {
     }
     
   render() {
-    const { name, version } = this.state.details;
+    const { id, name, version } = this.state.details;
     return (
       <div>
         <br />
@@ -40,6 +40,8 @@ class SkillDetails extends Component {
           <li className="collection-item">Name: {name}</li>
           <li className="collection-item">Version: {version}</li>
         </ul>
+        <Link className="btn" to={`skills/edit/${id}`}>Edit</Link>
+        <button className="btn red right">Delete</button>
       </div>
     )
   }
