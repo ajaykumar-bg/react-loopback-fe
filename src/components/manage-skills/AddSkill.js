@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-class SkillAdd extends Component {
+class AddSkill extends Component {
     constructor(props) {
       super(props)
     
@@ -57,4 +57,4 @@ class SkillAdd extends Component {
   }
 }
 
-export default SkillAdd
+export default AddSkill

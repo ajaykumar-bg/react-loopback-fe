@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-import Skills from './Skills'
-import AddSkill from './AddSkill'
-import SkillDetails from './SkillDetails'
-import EditSkill from './EditSkill'
+import Skills from './manage-skills/Skills'
+import AddSkill from './manage-skills/AddSkill'
+import SkillDetails from './manage-skills/SkillDetails'
+import EditSkill from './manage-skills/EditSkill'
 
 import Employees from './Employees'
 import DeviceCategories from './DeviceCategories'
