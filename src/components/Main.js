@@ -8,7 +8,12 @@ import AddSkill from './manage-skills/AddSkill'
 import SkillDetails from './manage-skills/SkillDetails'
 import EditSkill from './manage-skills/EditSkill'
 
-import Employees from './Employees'
+import Employees from './manage-employees/Employees'
+import AddEmployee from './manage-employees/AddEmployee'
+import EmployeeDetails from './manage-employees/EmployeeDetails'
+import EditEmployee from './manage-employees/EditEmployee'
+
+
 import DeviceCategories from './DeviceCategories'
 import About from './About'
 
@@ -22,7 +27,13 @@ export class Main extends Component {
             <Route exact path="/skills/add" component={AddSkill}/>
             <Route exact path="/skills/edit/:id" component={EditSkill}/>
             <Route exact path="/skills/:id" component={SkillDetails}/>
+
+
             <Route path="/employees" component={Employees}/>
+            <Route exact path="/employees/add" component={AddEmployee}/>
+            <Route exact path="/employees/edit/:id" component={EditEmployee}/>
+            <Route exact path="/employees/:id" component={EmployeeDetails}/>
+
             <Route path="/device-categories" component={DeviceCategories}/>
             <Route path="/about" component={About}/>
             {/* <Route path="/:user" component={User}/>
