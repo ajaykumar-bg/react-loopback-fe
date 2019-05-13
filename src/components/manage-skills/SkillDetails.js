@@ -14,11 +14,11 @@ class SkillDetails extends Component {
     }
 
     componentWillMount() {
-      this.getMeetUp();
+      this.getSkills();
     }
     
 
-    getMeetUp() {
+    getSkills() {
       let skillId= this.props.match.params.id;
       const { baseURL, SKILL_URL } = ApiConstants;
       axios.get(`${baseURL}${SKILL_URL}${skillId}`)
