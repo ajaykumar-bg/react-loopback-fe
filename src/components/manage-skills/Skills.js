@@ -38,7 +38,7 @@ class Skills extends Component {
     })
     return (
       <div>
-        <h3>Skills</h3>
+        <h3>Manage Skills</h3>
         <ul className="collection">
           {skillItems}
         </ul>

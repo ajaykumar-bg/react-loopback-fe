@@ -14,9 +14,9 @@ class SkillItem extends Component {
     const { id, name, version} = this.state.item;
     return (
         <li className="collection-item">
-        <Link to={`/skills/${id}`}>
-            { name } : {version}
-        </Link>
+          <Link to={`/skills/${id}`}>
+              { name } : {version}
+          </Link>
         </li>
     )
   }
