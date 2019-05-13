@@ -11,7 +11,7 @@ class SkillDetails extends Component {
       }
     }
 
-    componentDidMount() {
+    componentWillMount() {
       this.getMeetUp();
     }
     

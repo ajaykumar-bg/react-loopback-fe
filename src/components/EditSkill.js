@@ -7,15 +7,32 @@ class EditSkill extends Component {
       super(props)
     
       this.state = {
-         skill: {}
+        id: '',
+        name: '',
+        version: ''
       }
     }
 
-    componentDidMount() {
+    componentWillMount() {
+      this.getMeetUp();
+    }
+
+    getMeetUp() {
+      let skillId = this.props.match.params.id;
+      axios.get(`http://localhost:3000/api/skills/ ${skillId}`)
+      .then(response => {
+        this.setState({
+          id: response.data.id,
+          name: response.data.name,
+          version: response.data.version
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      });
     }
 
     updateSkill(newSkill) {
-      console.log(newSkill);
       axios.put(`http://localhost:3000/api/skills`, newSkill)
       .then(response => {
         this.props.history.push('/');
@@ -27,6 +44,7 @@ class EditSkill extends Component {
 
     onSubmit = (event) => {
       const newSkill = {
+        id: this.state.id,
         name: this.refs.name.value,
         version: this.refs.version.value
       }
@@ -36,6 +54,7 @@ class EditSkill extends Component {
     
 
   render() {
+    const {id, name, version} = this.state;
     return (
       <div>
         <br />
@@ -43,11 +62,11 @@ class EditSkill extends Component {
         <h3>Edit Skill</h3>
         <form onSubmit={this.onSubmit}>
           <div className="input-field">
-            <input type="text" name="name" ref="name"></input>
+            <input type="text" name="name" ref="name" defaultValue={name}></input>
             <label htmlFor="name">Skill Name</label>
           </div>
           <div className="input-field">
-            <input type="text" name="version" ref="version"></input>
+            <input type="text" name="version" ref="version" defaultValue={version}></input>
             <label htmlFor="version">Version</label>
           </div>
           <button className="btn" type="submit">Save</button>

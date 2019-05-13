@@ -11,11 +11,10 @@ class SkillAdd extends Component {
       }
     }
 
-    componentDidMount() {
+    componentWillMount() {
     }
 
     addSkill(newSkill) {
-      console.log(newSkill);
       axios.post(`http://localhost:3000/api/skills`, newSkill)
       .then(response => {
         this.props.history.push('/');

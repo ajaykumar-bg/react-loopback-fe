@@ -13,7 +13,7 @@ class Skills extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getSkills();
   }
 
