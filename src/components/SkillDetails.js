@@ -28,6 +28,17 @@ class SkillDetails extends Component {
         console.log(err)
       });
     }
+
+    onDelete = () => {
+      let skillId= this.state.details.id;
+      axios.delete(`http://localhost:3000/api/skills/ ${skillId}`)
+      .then(response => {
+        console.log(response)
+      })
+      .catch(err => {
+        console.log(err)
+      });
+    }
     
   render() {
     const { id, name, version } = this.state.details;
@@ -40,8 +51,8 @@ class SkillDetails extends Component {
           <li className="collection-item">Name: {name}</li>
           <li className="collection-item">Version: {version}</li>
         </ul>
-        <Link className="btn" to={`skills/edit/${id}`}>Edit</Link>
-        <button className="btn red right">Delete</button>
+        <Link className="btn" to={`/skills/edit/${id}`}>Edit</Link>
+        <button className="btn red right" onClick={this.onDelete}>Delete</button>
       </div>
     )
   }
