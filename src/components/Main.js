@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import {Switch, Route} from 'react-router-dom'
 
+import Dashboard from './Dashboard'
+
 import Skills from './manage-skills/Skills'
 import AddSkill from './manage-skills/AddSkill'
 import SkillDetails from './manage-skills/SkillDetails'
@@ -15,7 +17,7 @@ export class Main extends Component {
     return (
       <main>
         <Switch>
-            <Route exact path="/" component={Skills}/>
+            <Route exact path="/" component={Dashboard}/>
             <Route exact path="/skills" component={Skills}/>
             <Route exact path="/skills/add" component={AddSkill}/>
             <Route exact path="/skills/edit/:id" component={EditSkill}/>

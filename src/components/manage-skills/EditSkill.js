@@ -19,7 +19,7 @@ class EditSkill extends Component {
 
     getMeetUp() {
       let skillId = this.props.match.params.id;
-      axios.get(`http://localhost:3000/api/skills/ ${skillId}`)
+      axios.get(`http://localhost:3000/api/skills/${skillId}`)
       .then(response => {
         this.setState({
           id: response.data.id,

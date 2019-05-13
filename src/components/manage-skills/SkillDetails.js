@@ -31,7 +31,7 @@ class SkillDetails extends Component {
 
     onDelete = () => {
       let skillId= this.state.details.id;
-      axios.delete(`http://localhost:3000/api/skills/ ${skillId}`)
+      axios.delete(`http://localhost:3000/api/skills/${skillId}`)
       .then(response => {
         console.log(response)
       })

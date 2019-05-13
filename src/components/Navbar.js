@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
+import '../App.css'
+
 class Navbar extends Component {
   render() {
     return (
@@ -8,9 +10,9 @@ class Navbar extends Component {
         <nav className="blue darken-3">
             <div className="nav-wrapper">
                 {/* <a href="/" className="brand-logo">React</a> */}
-                <a href="/" data-activates="main-menu" className="button-collapse show-on-large">
-                    <i className="fa fa-bars"></i>
-                </a>
+                <Link to="/" data-activates="main-menu" className="button-collapse show-on-large">
+                    <i className="fa fa-home fs-24px"></i>
+                </Link>
                 <ul className="right hide-on-med-and-down">
                     <li><Link to="/skills"><i className="fa fa-certificate"></i>Skills</Link></li>
                     <li><Link to="/employees"><i className="fa fa-users"></i>Employees</Link></li>
