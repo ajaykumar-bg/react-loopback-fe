@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 
+import ApiConstants from '../../constants/ApiConstants'
+
 class SkillDetails extends Component {
     constructor(props) {
       super(props)
@@ -18,7 +20,8 @@ class SkillDetails extends Component {
 
     getMeetUp() {
       let skillId= this.props.match.params.id;
-      axios.get(`http://localhost:3000/api/skills/ ${skillId}`)
+      const { baseURL, SKILL_URL } = ApiConstants;
+      axios.get(`${baseURL}${SKILL_URL}${skillId}`)
       .then(response => {
         this.setState({
           details: response.data
@@ -31,7 +34,8 @@ class SkillDetails extends Component {
 
     onDelete = () => {
       let skillId= this.state.details.id;
-      axios.delete(`http://localhost:3000/api/skills/${skillId}`)
+      const { baseURL, SKILL_URL } = ApiConstants;
+      axios.delete(`${baseURL}${SKILL_URL}${skillId}`)
       .then(response => {
         console.log(response)
       })

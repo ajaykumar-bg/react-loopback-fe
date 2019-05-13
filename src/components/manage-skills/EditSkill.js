@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import ApiConstants from '../../constants/ApiConstants'
+
 class EditSkill extends Component {
     constructor(props) {
       super(props)
@@ -19,7 +21,8 @@ class EditSkill extends Component {
 
     getMeetUp() {
       let skillId = this.props.match.params.id;
-      axios.get(`http://localhost:3000/api/skills/${skillId}`)
+      const { baseURL, SKILL_URL } = ApiConstants;
+      axios.get(`${baseURL}${SKILL_URL}${skillId}`)
       .then(response => {
         this.setState({
           id: response.data.id,
@@ -33,7 +36,8 @@ class EditSkill extends Component {
     }
 
     updateSkill(newSkill) {
-      axios.put(`http://localhost:3000/api/skills`, newSkill)
+      const { baseURL, SKILL_URL } = ApiConstants;
+      axios.put(`${baseURL}${SKILL_URL}`, newSkill)
       .then(response => {
         this.props.history.push('/skills');
       })

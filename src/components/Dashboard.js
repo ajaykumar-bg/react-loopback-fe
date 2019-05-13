@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import ApiConstants from '../constants/ApiConstants'
+
 class Home extends Component {
     constructor(props) {
       super(props)
@@ -14,15 +16,16 @@ class Home extends Component {
     }
 
     getSkillCount() {
-        axios.get('http://localhost:3000/api/skills/count')
-        .then(response => {
+      const { baseURL, SKILL_URL } = ApiConstants;
+      axios.get(`${baseURL}${SKILL_URL}count`)
+      .then(response => {
         this.setState({
-            skills: response.data.count
+          skills: response.data.count
         })
-        })
-        .catch(err => {
+      })
+      .catch(err => {
         console.log(err)
-        });
+      });
     }
     
     componentWillMount() {

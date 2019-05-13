@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import ApiConstants from '../../constants/ApiConstants'
+
 import SkillItem from './SkillItem'
 
 class Skills extends Component {
@@ -18,7 +20,8 @@ class Skills extends Component {
   }
 
   getSkills() {
-    axios.get('http://localhost:3000/api/skills')
+    const { baseURL, SKILL_URL } = ApiConstants;
+    axios.get(`${baseURL}${SKILL_URL}`)
     .then(response => {
       this.setState({
         skills: response.data

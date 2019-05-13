@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import ApiConstants from '../../constants/ApiConstants'
+
 class AddSkill extends Component {
     constructor(props) {
       super(props)
@@ -15,7 +17,8 @@ class AddSkill extends Component {
     }
 
     addSkill(newSkill) {
-      axios.post(`http://localhost:3000/api/skills`, newSkill)
+      const { baseURL, SKILL_URL } = ApiConstants;
+      axios.post(`${baseURL}${SKILL_URL}`, newSkill)
       .then(response => {
         this.props.history.push('/skills');
       })
