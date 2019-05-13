@@ -49,7 +49,7 @@ class EmployeeDetails extends Component {
     return (
       <div>
         <br />
-        <Link className="btn grey" to="/">Back</Link>
+        <Link className="btn grey" to="/employees">Back</Link>
         <h3>{employeeName} : {employeeId}</h3>
         <ul className="collection">
           <li className="collection-item">Name: {employeeName}</li>
