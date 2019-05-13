@@ -46,7 +46,7 @@ class SkillDetails extends Component {
       <div>
         <br />
         <Link className="btn grey" to="/">Back</Link>
-        <h1>{name} : {version}</h1>
+        <h3>{name} : {version}</h3>
         <ul className="collection">
           <li className="collection-item">Name: {name}</li>
           <li className="collection-item">Version: {version}</li>

@@ -35,7 +35,7 @@ class EditSkill extends Component {
     updateSkill(newSkill) {
       axios.put(`http://localhost:3000/api/skills`, newSkill)
       .then(response => {
-        this.props.history.push('/');
+        this.props.history.push('/skills');
       })
       .catch(err => {
         console.log(err)
@@ -54,7 +54,7 @@ class EditSkill extends Component {
     
 
   render() {
-    const {id, name, version} = this.state;
+    const {name, version} = this.state;
     return (
       <div>
         <br />

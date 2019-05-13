@@ -17,7 +17,7 @@ class AddSkill extends Component {
     addSkill(newSkill) {
       axios.post(`http://localhost:3000/api/skills`, newSkill)
       .then(response => {
-        this.props.history.push('/');
+        this.props.history.push('/skills');
       })
       .catch(err => {
         console.log(err)
