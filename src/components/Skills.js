@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+import SkillItem from './SkillItem'
+
 class Skills extends Component {
   constructor(props) {
     super(props)
@@ -31,7 +33,7 @@ class Skills extends Component {
   render() {
     const skillItems = this.state.skills.map((skill ,index) => {
       return (
-        <li className="collection-item" key={skill.id}>{skill.name}</li>
+        <SkillItem key={skill.id} item={skill}/>
       );
     })
     return (
