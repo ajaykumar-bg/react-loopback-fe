@@ -41,7 +41,7 @@ class AddEmployee extends Component {
     return (
       <div>
         <br />
-        <Link className="btn grey" to="/">Back</Link>
+        <Link className="btn grey" to="/employees">Back</Link>
         <h3>Add Employee</h3>
         <form onSubmit={this.onSubmit}>
           <div className="input-field">

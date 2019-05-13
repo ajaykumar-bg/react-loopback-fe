@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Switch, Route} from 'react-router-dom'
 
 import Dashboard from './Dashboard'
+import NoMatch from './NoMatch'
 
 import Skills from './manage-skills/Skills'
 import AddSkill from './manage-skills/AddSkill'
@@ -36,8 +37,7 @@ export class Main extends Component {
 
             <Route path="/device-categories" component={DeviceCategories}/>
             <Route path="/about" component={About}/>
-            {/* <Route path="/:user" component={User}/>
-            <Route component={NoMatch}/> */}
+            <Route component={NoMatch}/>
         </Switch>
         
       </main>
