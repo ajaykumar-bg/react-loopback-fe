@@ -11,12 +11,17 @@ class EmployeeItem extends Component {
     }
     
   render() {
-    const { id, employeeName, employeeId} = this.state.item;
+    const { id, employeeName, employeeId, designation, emailId} = this.state.item;
     return (
-        <li className="collection-item">
+        <li className="collection-item avatar">
           <Link to={`/employees/${id}`}>
-              { employeeName } : {employeeId}
+            <i className="fa fa-user circle"></i>
+            <span className="title">{ employeeName } : {employeeId}</span>
+            <p>{ designation } <br/>
+              { emailId }
+            </p>
           </Link>
+          <Link to={`/employees/edit/${id}`} className="secondary-content"><i className="fa fa-pencil"></i></Link>
         </li>
     )
   }
