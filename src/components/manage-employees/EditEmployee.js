@@ -11,7 +11,9 @@ class EditEmployee extends Component {
       this.state = {
         id: '',
         employeeName: '',
-        employeeId: ''
+        employeeId: '',
+        designation: '',
+        emailId: ''
       }
     }
 
@@ -27,7 +29,9 @@ class EditEmployee extends Component {
         this.setState({
           id: response.data.id,
           employeeName: response.data.employeeName,
-          employeeId: response.data.employeeId
+          employeeId: response.data.employeeId,
+          designation: response.data.designation,
+          emailId: response.data.emailId,
         })
       })
       .catch(err => {
@@ -50,7 +54,9 @@ class EditEmployee extends Component {
       const newEmployee = {
         id: this.state.id,
         employeeName: this.refs.employeeName.value,
-        employeeId: this.refs.employeeId.value
+        employeeId: this.refs.employeeId.value,
+        designation: this.refs.designation.value,
+        emailId: this.refs.emailId.value
       }
       event.preventDefault();
       this.updateEmployee(newEmployee);
@@ -58,7 +64,7 @@ class EditEmployee extends Component {
     
 
   render() {
-    const {employeeName, employeeId} = this.state;
+    const {employeeName, employeeId, designation, emailId} = this.state;
     return (
       <div>
         <br />
@@ -70,8 +76,16 @@ class EditEmployee extends Component {
             <label htmlFor="employeeName">Employee Name</label>
           </div>
           <div className="input-field">
-            <input type="text" name="version" ref="employeeId" defaultValue={employeeId}></input>
+            <input type="text" name="employeeId" ref="employeeId" defaultValue={employeeId}></input>
             <label htmlFor="employeeId">Employee Id</label>
+          </div>
+          <div className="input-field">
+            <input type="text" name="designation" ref="designation" defaultValue={designation}></input>
+            <label htmlFor="designation">Designation</label>
+          </div>
+          <div className="input-field">
+            <input type="text" name="emailId" ref="emailId" defaultValue={emailId}></input>
+            <label htmlFor="emailId">Email Id</label>
           </div>
           <button className="btn" type="submit">Save</button>
         </form>

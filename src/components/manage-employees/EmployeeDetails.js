@@ -45,7 +45,7 @@ class EmployeeDetails extends Component {
     }
     
   render() {
-    const { id, employeeName, employeeId } = this.state.details;
+    const { id, employeeName, employeeId, designation, emailId } = this.state.details;
     return (
       <div>
         <br />
@@ -54,6 +54,8 @@ class EmployeeDetails extends Component {
         <ul className="collection">
           <li className="collection-item">Name: {employeeName}</li>
           <li className="collection-item">Emp_ID: {employeeId}</li>
+          <li className="collection-item">Designation: {designation}</li>
+          <li className="collection-item">Email ID: {emailId}</li>
         </ul>
         <Link className="btn" to={`/employees/edit/${id}`}>Edit</Link>
         <button className="btn red right" onClick={this.onDelete}>Delete</button>

@@ -30,7 +30,9 @@ class AddEmployee extends Component {
     onSubmit = (event) => {
       const newEmployee = {
         employeeName: this.refs.employeeName.value,
-        employeeId: this.refs.employeeId.value
+        employeeId: this.refs.employeeId.value,
+        designation: this.refs.designation.value,
+        emailId: this.refs.emailId.value
       }
       event.preventDefault();
       this.addEmployee(newEmployee);
@@ -51,6 +53,14 @@ class AddEmployee extends Component {
           <div className="input-field">
             <input type="text" name="employeeId" ref="employeeId"></input>
             <label htmlFor="employeeId">Employee Id</label>
+          </div>
+          <div className="input-field">
+            <input type="text" name="designation" ref="designation"></input>
+            <label htmlFor="designation">Designation</label>
+          </div>
+          <div className="input-field">
+            <input type="text" name="emailId" ref="emailId"></input>
+            <label htmlFor="emailId">Email Id</label>
           </div>
           <button className="btn" type="submit">Save</button>
 
