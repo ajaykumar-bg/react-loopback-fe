@@ -17,6 +17,8 @@ import EditEmployee from './manage-employees/EditEmployee'
 
 import DeviceCategories from './DeviceCategories'
 import About from './About'
+import Login from './Login'
+import Register from './Register'
 
 export class Main extends Component {
   render() {
@@ -24,6 +26,7 @@ export class Main extends Component {
       <main>
         <Switch>
             <Route exact path="/" component={Dashboard}/>
+            <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/skills" component={Skills}/>
             <Route exact path="/skills/add" component={AddSkill}/>
             <Route exact path="/skills/edit/:id" component={EditSkill}/>
@@ -35,8 +38,10 @@ export class Main extends Component {
             <Route exact path="/employees/edit/:id" component={EditEmployee}/>
             <Route exact path="/employees/:id" component={EmployeeDetails}/>
 
-            <Route path="/device-categories" component={DeviceCategories}/>
-            <Route path="/about" component={About}/>
+            <Route exact path="/device-categories" component={DeviceCategories}/>
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Register}/>
             <Route component={NoMatch}/>
         </Switch>
         

@@ -1,9 +1,38 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 import '../App.css'
+import ApiConstants from '../constants/ApiConstants'
+import StorageService from '../services/StorageService'
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       
+    }
+  }
+
+  clearStorage = () => {
+    StorageService.clearStorage();
+    this.props.history.push('/login');
+  }
+  
+  logout() {
+    const auth_token = StorageService.getAuthToken();
+    const { baseURL, USER_URL } = ApiConstants;
+    axios.post(`${baseURL}${USER_URL}logout?access_token=${auth_token}`, )
+    .then(response => {
+      this.clearStorage();
+    })
+    .catch(err => {
+      this.clearStorage();
+      console.log(err)
+    });
+  }
+  
   render() {
     return (
       <div>
@@ -13,6 +42,9 @@ class Navbar extends Component {
                 <Link to="/" data-activates="main-menu" className="button-collapse show-on-large">
                     <i className="fa fa-home fs-24px"></i>
                 </Link>
+                <ul className="right">
+                  <li onClick={this.logout}><i className="fa fa-sign-out"></i>Logout</li>
+                </ul>
                 <ul className="right hide-on-med-and-down">
                     <li><Link to="/skills"><i className="fa fa-certificate"></i>Skills</Link></li>
                     <li><Link to="/employees"><i className="fa fa-users"></i>Employees</Link></li>
