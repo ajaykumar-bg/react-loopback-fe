@@ -30,7 +30,7 @@ export class Main extends Component {
             <Route exact path="/skills/:id" component={SkillDetails}/>
 
 
-            <Route path="/employees" component={Employees}/>
+            <Route exact path="/employees" component={Employees}/>
             <Route exact path="/employees/add" component={AddEmployee}/>
             <Route exact path="/employees/edit/:id" component={EditEmployee}/>
             <Route exact path="/employees/:id" component={EmployeeDetails}/>
