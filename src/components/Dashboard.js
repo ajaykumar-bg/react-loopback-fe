@@ -27,10 +27,23 @@ class Home extends Component {
         console.log(err)
       });
     }
+
+    getEmployeeCount() {
+      const { baseURL, EMPLOYEE_URL } = ApiConstants;
+      axios.get(`${baseURL}${EMPLOYEE_URL}count`)
+      .then(response => {
+        this.setState({
+          employees: response.data.count
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      });
+    }
     
     componentWillMount() {
         this.getSkillCount();
-        // this.getDeviceCategoryCount();
+        this.getEmployeeCount();
     }
     
     
