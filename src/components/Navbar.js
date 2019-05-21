@@ -43,7 +43,7 @@ class Navbar extends Component {
                     <i className="fa fa-home fs-24px"></i>
                 </Link>
                 <ul className="right">
-                  <li onClick={this.logout}><i className="fa fa-sign-out"></i>Logout</li>
+                  <li><Link to="/login"><i className="fa fa-sign-out"></i>Logout</Link></li>
                 </ul>
                 <ul className="right hide-on-med-and-down">
                     <li><Link to="/skills"><i className="fa fa-certificate"></i>Skills</Link></li>

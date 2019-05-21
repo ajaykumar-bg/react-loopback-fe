@@ -102,7 +102,7 @@ export class Login extends Component {
             </p>
           </form>
 
-          <div className="row">
+          {/* <div className="row">
             <GoogleLogin
               clientId="353047849820-cc4r0f57gdm56onir633v31b74ftpc00.apps.googleusercontent.com"
               buttonText="Login"
@@ -118,7 +118,7 @@ export class Login extends Component {
               onClick={this.componentClicked}
               callback={this.responseFacebook}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     );
